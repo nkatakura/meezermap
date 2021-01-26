@@ -8,13 +8,13 @@ import java.awt.*;
 
 public class Window extends JFrame implements ActionListener {
     int choice;
+    JTextField xInput, zInput;
     JButton enterCoordsButton;
     JButton searchButton;
     JButton showAllButton;
     JButton clearButton;
     int x, z;
     Window() {
-        JTextField xInput, zInput;
         JLabel xLabel = new JLabel();
         JLabel zLabel = new JLabel();
         xLabel.setText("x coordinate:");
@@ -62,7 +62,9 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enterCoordsButton) {
-            choice = 1;
+            int x = Integer.parseInt(xInput.getText());
+            int z = Integer.parseInt(zInput.getText());
+            new MapDraw(x, z);
         }
         if (e.getSource() == searchButton) {
             System.out.println("This button hasn't been implemented yet!");
