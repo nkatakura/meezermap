@@ -10,8 +10,6 @@ public class MapDrawArea extends JPanel {
     }
 
     public void paint(Graphics g) {
-
-        
         Graphics2D g2D = (Graphics2D) g;
         g2D.drawRect(0, 0, 200, 200);
     }

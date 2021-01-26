@@ -51,11 +51,37 @@ public class Window extends JFrame implements ActionListener {
         this.pack();
     }
 
+    public void coordinateInput() {
+        JButton enter;
+        JTextField xInput, zInput;
+        int x, z;
+        JFrame coordInput = new JFrame();
+        JLabel xLabel = new JLabel();
+        JLabel zLabel = new JLabel();
+        xLabel.setText("x coordinate:");
+        zLabel.setText("z coordinate:");
+        xInput = new JTextField(6);
+        zInput = new JTextField(6);
+        enter = new JButton();
+        enter.setText("Enter");
+        enter.addActionListener(this);
+        coordInput.setSize(200, 100);
+        coordInput.setLayout(new FlowLayout());
+        coordInput.setVisible(true);
+        coordInput.add(xLabel);
+        coordInput.add(xInput);
+        coordInput.add(zLabel);
+        coordInput.add(zInput);
+        coordInput.add(enter);
+        coordInput.setResizable(false);
+        coordInput.pack();
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enterCoordsButton) {
-            new CoordinateInput();
-            System.out.print(CoordinateInput.z + CoordinateInput.x);
+            coordinateInput();
+            choice = 1;
         }
         if (e.getSource() == searchButton) {
             System.out.println("This button hasn't been implemented yet!");
