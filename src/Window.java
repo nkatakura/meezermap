@@ -50,16 +50,16 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enterCoordsButton) {
-            System.out.print("test1");
+            System.out.println("This button hasn't been implemented yet!");
         }
         if (e.getSource() == searchButton) {
-            System.out.print("test2");
+            System.out.println("This button hasn't been implemented yet!");
         }
         if (e.getSource() == showAllButton) {
-            System.out.print("test3");
+            System.out.println("This button hasn't been implemented yet!");
         }
         if (e.getSource() == clearButton) {
-            System.out.print("test4");
+            System.out.println("This button hasn't been implemented yet!");
         }
     }
     
