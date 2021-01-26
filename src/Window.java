@@ -6,6 +6,7 @@ import javax.swing.*;
 import java.awt.Color;
 
 public class Window extends JFrame implements ActionListener {
+    int choice;
     JButton enterCoordsButton;
     JButton searchButton;
     JButton showAllButton;
@@ -43,7 +44,18 @@ public class Window extends JFrame implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (e.getSource() == enterCoordsButton) {
+            System.out.print("test1");
+        }
+        if (e.getSource() == searchButton) {
+            System.out.print("test2");
+        }
+        if (e.getSource() == showAllButton) {
+            System.out.print("test3");
+        }
+        if (e.getSource() == clearButton) {
+            System.out.print("test4");
+        }
     }
     
 }
