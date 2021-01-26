@@ -27,7 +27,7 @@ public class Window extends JFrame implements ActionListener {
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS));
 
         enterCoordsButton = new JButton();
-        enterCoordsButton.setText("Enter Coordinates to show");
+        enterCoordsButton.setText("Draw coordinate");
         enterCoordsButton.addActionListener(this);
         buttonPanel.add(xLabel);
         buttonPanel.add(xInput);
@@ -62,8 +62,12 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enterCoordsButton) {
-            int x = Integer.parseInt(xInput.getText());
-            int z = Integer.parseInt(zInput.getText());
+            try {
+                x = Integer.parseInt(xInput.getText());
+                z = Integer.parseInt(zInput.getText());
+            } catch (Exception g) {
+                new ErrorWindow();
+            }
             new MapDraw(x, z);
         }
         if (e.getSource() == searchButton) {
