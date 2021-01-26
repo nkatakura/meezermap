@@ -1,41 +1,49 @@
 package src;
+
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import java.awt.Color;
 
 public class Window extends JFrame implements ActionListener {
-    JButton enterCoordsButton = new JButton();
-    JButton searchButton = new JButton();
-    JButton showAllButton = new JButton();
-    JButton clearButton = new JButton();
+    JButton enterCoordsButton;
+    JButton searchButton;
+    JButton showAllButton;
+    JButton clearButton;
     Window() {
         String title = "MeezerMap by Naoki";
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.LIGHT_GRAY);
         buttonPanel.setBounds(500, 0, 250, 500);
-        JFrame frame = new JFrame();
-        frame.setTitle(title);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLayout(null);
-        frame.setSize(750, 500);
-        frame.setVisible(true);
-        frame.add(buttonPanel);
-        JButton enterCoordsButton = new JButton();
-        JButton searchButton = new JButton();
-        JButton showAllButton = new JButton();
-        JButton clearButton = new JButton();
-        frame.add(enterCoordsButton);
-        frame.add(searchButton);
-        frame.add(showAllButton);
-        frame.add(clearButton);
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS));
+
+        enterCoordsButton = new JButton();
+        enterCoordsButton.setText("Enter Coordinates to show");
+        buttonPanel.add(enterCoordsButton);
+
+        searchButton = new JButton();
+        searchButton.setText("Enter a name to search");
+        buttonPanel.add(searchButton);
+
+        showAllButton = new JButton();
+        showAllButton.setText("Show all points");
+        buttonPanel.add(showAllButton);
+
+        clearButton = new JButton();
+        clearButton.setText("Clear the map");
+        buttonPanel.add(clearButton);
+
+        this.setTitle(title);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setLayout(null);
+        this.setSize(750, 500);
+        this.setVisible(true);
+        this.add(buttonPanel);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == enterCoordsButton) {}
-        if (e.getSource() == ) {}
-        if (e.getSource() == ) {}
-        if (e.getSource() == ) {}
+
     }
     
 }
