@@ -7,11 +7,12 @@ import javax.swing.*;
 public class CoordinateInput extends JFrame implements ActionListener {
 
     JButton enter;
-    JTextField xInput, yInput;
+    JTextField xInput, zInput;
+    static int x, z;
 
     CoordinateInput() {
         xInput = new JTextField(6);
-        yInput = new JTextField(6);
+        zInput = new JTextField(6);
         enter.setText("Enter");
         this.setSize(200, 100);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,20 +20,17 @@ public class CoordinateInput extends JFrame implements ActionListener {
         this.setSize(750, 500);
         this.setVisible(true);
         this.add(xInput);
-        this.add(yInput);
+        this.add(zInput);
         this.add(enter);
         this.setResizable(false);
-    }
-
-    public int intParser(String input) {
-        if (input.charAt(0) == '-')
-        return x;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enter) {
-
+            x = Integer.parseInt(xInput.getText());
+            z = Integer.parseInt(zInput.getText());
+            this.dispose();
         }
     }
 

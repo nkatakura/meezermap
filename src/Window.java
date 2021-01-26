@@ -11,6 +11,7 @@ public class Window extends JFrame implements ActionListener {
     JButton searchButton;
     JButton showAllButton;
     JButton clearButton;
+    int x, z;
     Window() {
         String title = "MeezerMap by Naoki";
         JPanel buttonPanel = new JPanel();
@@ -50,7 +51,8 @@ public class Window extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == enterCoordsButton) {
-            System.out.println("This button hasn't been implemented yet!");
+            new CoordinateInput();
+            System.out.print(CoordinateInput.z + CoordinateInput.x);
         }
         if (e.getSource() == searchButton) {
             System.out.println("This button hasn't been implemented yet!");
