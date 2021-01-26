@@ -7,6 +7,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Window extends JFrame implements ActionListener {
+    public static String[] names;
+    public static int[][] coords;
     int choice;
     JTextField xInput, zInput;
     JButton enterCoordsButton;
@@ -68,17 +70,23 @@ public class Window extends JFrame implements ActionListener {
             } catch (Exception g) {
                 new ErrorWindow();
             }
-            new MapDraw(x, z);
+            new MapDrawFrame(x, z);
         }
         if (e.getSource() == searchButton) {
             System.out.println("This button hasn't been implemented yet!");
         }
         if (e.getSource() == showAllButton) {
-            System.out.println("This button hasn't been implemented yet!");
+            new MapDrawFrame(coords, names);
         }
         if (e.getSource() == clearButton) {
             System.out.println("This button hasn't been implemented yet!");
         }
+    }
+
+    public static void main (String [] args){
+        coords = DataReader.coordArrayMaker("coords.csv");
+        names = DataReader.fileArrayMaker("names.csv");
+        Window main = new Window();
     }
     
 }
