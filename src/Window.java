@@ -1,9 +1,10 @@
 package src;
 
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import java.awt.Color;
+import java.awt.*;
 
 public class Window extends JFrame implements ActionListener {
     int choice;
@@ -11,12 +12,13 @@ public class Window extends JFrame implements ActionListener {
     JButton searchButton;
     JButton showAllButton;
     JButton clearButton;
+    MapDrawArea drawArea;
     int x, z;
     Window() {
+        drawArea = new MapDrawArea();
         String title = "MeezerMap by Naoki";
         JPanel buttonPanel = new JPanel();
         buttonPanel.setBackground(Color.LIGHT_GRAY);
-        buttonPanel.setBounds(500, 0, 250, 500);
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS));
 
         enterCoordsButton = new JButton();
@@ -41,11 +43,12 @@ public class Window extends JFrame implements ActionListener {
 
         this.setTitle(title);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(null);
-        this.setSize(750, 500);
+        this.setLayout(new FlowLayout());
         this.setVisible(true);
+        this.add(drawArea);
         this.add(buttonPanel);
         this.setResizable(false);
+        this.pack();
     }
 
     @Override

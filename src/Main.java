@@ -1,3 +1,6 @@
+// Author: Naoki Katakura
+// Description: Mapping program for MeezerCraft minecraft server
+
 package src;
 
 public class Main {
