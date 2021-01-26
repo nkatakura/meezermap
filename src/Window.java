@@ -20,18 +20,22 @@ public class Window extends JFrame implements ActionListener {
 
         enterCoordsButton = new JButton();
         enterCoordsButton.setText("Enter Coordinates to show");
+        enterCoordsButton.addActionListener(this);
         buttonPanel.add(enterCoordsButton);
 
         searchButton = new JButton();
         searchButton.setText("Enter a name to search");
+        searchButton.addActionListener(this);
         buttonPanel.add(searchButton);
 
         showAllButton = new JButton();
         showAllButton.setText("Show all points");
+        showAllButton.addActionListener(this);
         buttonPanel.add(showAllButton);
 
         clearButton = new JButton();
         clearButton.setText("Clear the map");
+        clearButton.addActionListener(this);
         buttonPanel.add(clearButton);
 
         this.setTitle(title);
@@ -40,6 +44,7 @@ public class Window extends JFrame implements ActionListener {
         this.setSize(750, 500);
         this.setVisible(true);
         this.add(buttonPanel);
+        this.setResizable(false);
     }
 
     @Override
